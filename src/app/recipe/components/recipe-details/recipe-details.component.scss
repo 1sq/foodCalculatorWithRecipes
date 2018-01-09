@@ -1,0 +1,50 @@
+
+
+.main{
+	margin-top:80px;
+
+.collection-item{
+	overflow:hidden;
+	&-icon{
+		display: inline;
+		background: darken(#E3F2FD,5%);
+		color:darken(#E3F2FD,55%);
+		height: 100%;   
+		position: relative;
+		vertical-align: middle;
+		padding: 20px;
+		left: -20px;
+	}
+}
+
+.recipe-step{
+	padding: 12px;
+	box-shadow: 1px 1px 6px 1px rgba(0,0,0,.3);
+	margin-bottom: 9px;
+	border-radius: 4px;
+	border-top-left-radius:0;
+	cursor:pointer;
+	background:#fff;
+	z-index:100;
+	position:relative;
+	transition:.3s ease-in-out;
+
+	&:hover{
+	background-color:darken(#fff,5%);
+	}
+
+	&.done{
+		background-color:#689f38;
+	}
+
+	&-index{
+	float: left;
+	transform: translateX(-15px);
+	z-index: 1;
+	background: darken(#fff,15%);
+	padding: 5px 15px 1px 3px;
+	}
+
+}
+
+}

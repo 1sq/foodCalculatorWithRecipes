@@ -1,0 +1,28 @@
+.product{
+	background:#E3F2FD;
+	cursor:pointer;
+	&:hover{
+		background:darken(#E3F2FD,10%);
+	}
+
+	&-image{
+	width:80px;
+	height:80px;
+	border-radius:50%;
+	border: 1px solid rgba(0,0,0,.1);
+	background-position: 50% 50%;
+	background-size: cover;
+	overflow: hidden;
+	position:relative;
+	top:5px;
+	margin-left:5px;
+	}
+
+	&-title{
+		position: relative;
+		margin-left:4px;
+		margin-top: 8px;
+		font-size: 80%;
+		text-transform: uppercase;
+	}
+}

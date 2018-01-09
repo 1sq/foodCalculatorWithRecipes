@@ -1,0 +1,19 @@
+.ingredient{
+	display:flex;
+	flex-direction:row;
+	width:100%;
+
+	
+	&__amount{
+	margin-left:3%;
+	width:63%;
+	max-width:63%;
+	}
+
+	&-total{
+	font-size:12pt;
+	position: relative;
+	bottom: -20px;
+	right: -80%;
+	}
+}

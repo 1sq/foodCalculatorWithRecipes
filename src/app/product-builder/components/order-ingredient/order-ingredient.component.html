@@ -1,0 +1,14 @@
+<div [formGroup]="ingredientGroup">
+
+	<div class="row">
+		<div class="col s3">
+		<input type="text" placeholder="ingredient name...Ex.'Potato'" class="" formControlName="ingredient_title">
+	</div>
+	<div class="col s9">
+		<app-ingredient-amount [units]="units" formControlName="amount"></app-ingredient-amount>
+	</div>
+	<div class="ingredient-total">
+		Total: {{total | currency : 'USD' : 'symbol'}}
+	</div>
+	</div>
+</div>

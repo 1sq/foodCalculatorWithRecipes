@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+
+@font-face{
+	font-family:'hastoler';
+	src:url('/assets/fonts/hastoler.otf')
+}
+@font-face{
+	font-family:'third_rail';
+	src:url('/assets/fonts/third_rail.ttf')
+}
+
+html,body{
+	overflow-x:hidden;
+	font-family:'hastoler';
+}
+

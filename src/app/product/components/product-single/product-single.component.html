@@ -1,0 +1,21 @@
+<div class="product">
+	<div class="product-wrapper">
+		<div class="product-image" [style.background-image]="image">
+			<div class="product-image-overlay" #overlay>
+				<div class="product-title">
+					{{product.title}}
+				</div>
+				<div class="product-details">
+					<p><span>{{product.amount}}{{product.units}} / </span>
+						<span>
+							{{product.price | currency:'USD'}}
+						</span>
+						<span class="categories">Categories: <span class="categories-title" *ngFor="let category of product.categories;let last=last">
+								{{category}}<span *ngIf="!last"> | </span>
+							</span></span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

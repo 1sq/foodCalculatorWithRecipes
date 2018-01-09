@@ -1,0 +1,17 @@
+<div [formGroup]="orderGroup">
+	<div class="form-group">
+		<label>Order title</label>
+		<input type="text" name="order_title" formControlName="order_name">
+	</div>
+
+	<!--ingredients -->
+	<div formArrayName="ingredients">
+		<div  class="single-ingredient" *ngFor="let ingredient of orderGroup.controls.ingredients.controls;let i=index;">
+			<span>Ingredient {{i+1}}</span>
+				<app-order-ingredient (ingredientTotalChanged)="onIngredientTotalChanged($event,i)" [group]="orderGroup.controls.ingredients.controls[i]"></app-order-ingredient>
+
+		</div>
+	
+	</div>
+<div class="order-total">Total for product: {{_total | currency : 'USD' : 'symbol'}}</div>
+</div>

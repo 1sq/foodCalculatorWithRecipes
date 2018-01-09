@@ -1,0 +1,40 @@
+<form [formGroup]="orderForm" class="order-form">
+<h4 class="center">Order Form</h4>
+		
+	<input type="text" id="title" class="form-control big order-title" placeholder="title here..." formControlName="title">
+	
+	<div formArrayName="orders">
+		 <button class="button" type="button" (click)="pushOrder()">
+          <i class="fa fa-plus"></i>
+          Add product
+        </button>
+	 <div *ngFor="let order of orderForm.controls.orders.controls; let i = index;">
+	 	<div class="order-creator__title blue lighten-5" [class.lighten-4]="openOrder === i" (click)="toggleOrder(i)">
+	 		Product {{i+1}}
+	 	
+	 	          <i 
+            class="fa fa-fw order-creator__icon"
+            [class.fa-chevron-down]="openOrder !== i"
+            [class.fa-chevron-up]="openOrder === i"></i>
+
+             <i *ngIf="order.get('ingredients').length>=1 && order.touched"
+            class="fa fa-fw fa-check order-creator__status"
+            [class.fa-check]="order.valid"></i>
+            <span *ngIf="order.get('ingredients').length<1 && order.touched">
+            <span class="required red-text"> <i 
+            class="fa fa-fw fa-times order-creator__status"></i> Warning: Add some ingredients!</span>
+            </span>
+            <div 
+            class="order-creator__delete"
+            *ngIf="orderForm.get('orders').length > 0"
+            (click)="removeOrder(i)">
+            <i class="fa fa-trash fa-fw"></i>
+          </div>
+            </div>
+	 <div class="order-creator__body" [class.order-creator__body__opened]="openOrder===i" [formGroupName]="i">
+	 	<app-order (totalChanged)="onTotalChanged($event,i)" [group]="orderForm.controls.orders.controls[i]"></app-order>
+	 </div>
+	 </div>
+	</div>
+	<div class="left">Total cost: {{_totalCost | currency : 'USD' : 'symbol'}}</div><button type="submit" class="btn green lighten-1 waves-effect right" (click)="sendOrderToApi()">SAVE</button>
+</form>

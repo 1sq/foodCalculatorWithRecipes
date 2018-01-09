@@ -1,0 +1,44 @@
+<a [routerLink]="['/recipes']">Go back</a>
+<div class="container main">
+	<h4 class="center">{{recipe.name}}</h4>
+	<div class="row">
+		<div class="col s6">
+			<div class="row">
+			<img [src]="recipe.image" class="col s12">
+			<div class="col s12 recipe-data">
+				<div class="row">
+					<div class="col s6">
+						  <ul class="collection">
+						      <li class="collection-item"><div class="collection-item-icon"><i class="material-icons">local_restaurant</i></div>Recipe Servings: <b>{{recipe.servings}}</b></li>
+						      <li class="collection-item"><div class="collection-item-icon"><i class="material-icons">access_alarm</i></div> Cook time: <b>{{recipe.cook_time}}</b></li>
+						      <li class="collection-item"><div class="collection-item-icon"><i class="material-icons">network_check</i></div>Difficulty: <b>{{recipe.difficulty}}</b></li>
+		    			  </ul>
+	    			</div>
+	    			<div class="col s6">
+	    				<ul class="collection">
+						      <li class="collection-item"><div class="collection-item-icon"><i class="material-icons">access_alarm</i></div> Prep time: <b>{{recipe.prep_time}}</b></li>
+						      <li class="collection-item"><div class="collection-item-icon"><i class="material-icons">cake</i></div>Category: <b>{{recipe.category}}</b></li>
+		    			  </ul>
+	    			</div>
+	    		</div>
+	    		<div class="col s12 recipe-ingredients">
+	    			<h5 class="center">Ingredients:</h5>
+	    			<div class="recipe-ingredients-body">
+	    				<div class="chip" *ngFor="let ingredient of recipe.ingredients">
+	    					{{ingredient.name}}:<b>{{ingredient.amount}} {{ingredient.units | pluralPipe : ingredient.amount}}</b>
+	    				</div>
+	    			</div>
+	    		</div>
+				
+			</div>
+		</div>
+		</div>
+		<div class="col s6">
+			<div class="recipe-steps">
+				<div *ngFor="let step of steps;let i=index;"><div class="recipe-step-index">{{step.idx+1}}</div>
+					<div class="recipe-step" (click)="markAsDone(step.idx)" [class.done]="step.done"> {{step.step}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+<div class="row">
+	<div class="col s6">
+		<div class="col s3">
+			<div class="col s3">
+<button class="btn btn-floating red decrement" (click)="decreaseStep()">
+	-
+</button>
+</div>
+		
+</div>
+	<div class="col s5">
+		<div class="input-value">{{incrementOrDecrementStep}}<small class="step-caption">step</small></div>
+<input type="number" name="step"  [(ngModel)]="incrementOrDecrementStep" class="step-input">
+</div>
+	<button class="btn btn-floating blue increment" (click)="increaseStep()">
+	+
+</button>
+</div>
+<div class="col s6">
+		<div class="col s3">
+<button class="btn btn-floating red decrement" (click)="decrement()">
+	-
+</button>
+</div>
+	<div class="col s5 amount-cont">
+		<small class="value-caption"> amount </small>
+		<div class="input-value">{{value | amountPipe : units}}</div>
+<input type="number" name="amount" class="amount-input" [attr.value]="value" (change)="this.onModelChange(value)">
+</div>
+	<div class="col s3">
+		<button class="btn btn-floating blue increment" (click)="increment()">
+	+
+</button>
+</div>
+</div>
+<div class="measurements">
+<div class="measurements__item" (click)="onChooseMeasure(measure.name)" [class.measurements__item--active]="chosenMeasure == measure.name" *ngFor="let measure of extraMeasurements">
+	<div class="measurements__item-cont">
+	<img [src]="measure.img" class="image">
+	<span class="name">{{measure.name}}</span>
+	</div>
+</div>
+</div>
+</div>

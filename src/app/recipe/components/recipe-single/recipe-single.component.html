@@ -1,0 +1,14 @@
+<h4 class="header">{{recipe.name}}</h4>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img [src]="recipe.image" style="width: 300px">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>{{recipe.desc}}</p>
+        </div>
+        <div class="card-action">
+          <a [routerLink]="['./'+recipe.id]">See details</a>
+        </div>
+      </div>
+    </div>
