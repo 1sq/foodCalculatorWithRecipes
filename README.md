@@ -2,10 +2,10 @@
 calculator of the production cost for custom products
   
 Menu view:
-![menu](foodCalculatorWithRecipes/src/assets/screens/screen1menu.png)
+![menu](screen1menu.png)
 
 Recipe details view where you can mark steps as DONE:
-![recipe](foodCalculatorWithRecipes/src/assets/screens/screen2recipe.png)
+![recipe](foodCalculatorWithRecipes/screen2recipe.png)
 
 Product list with info about products:
 ![products](foodCalculatorWithRecipes/src/assets/screens/screen3products.png)
