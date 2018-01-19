@@ -11,8 +11,9 @@ HomeComponent,HomeMenuComponent,HomeMenuItemComponent
 ];
  
 const HOME_ROUTES:Routes = [
-{path:'',pathMatch:'full',component:HomeComponent}
-]
+{path:'',children:[{
+	path:'',pathMatch:'full',component:HomeComponent}]}
+];
 
 
 @NgModule({

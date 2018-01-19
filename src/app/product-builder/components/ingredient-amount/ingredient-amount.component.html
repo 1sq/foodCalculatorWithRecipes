@@ -10,7 +10,7 @@
 </div>
 	<div class="col s5">
 		<div class="input-value">{{incrementOrDecrementStep}}<small class="step-caption">step</small></div>
-<input type="number" name="step"  [(ngModel)]="incrementOrDecrementStep" class="step-input">
+<input type="number" name="step"  [(ngModel)]="_incrementOrDecrementStep" class="step-input">
 </div>
 	<button class="btn btn-floating blue increment" (click)="increaseStep()">
 	+

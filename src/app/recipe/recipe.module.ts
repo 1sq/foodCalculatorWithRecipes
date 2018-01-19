@@ -10,9 +10,10 @@ import {RecipeResolver} from './services/recipe.resolver';
 import {PluralPipe} from './pipes/plural.pipe';
 
 const RECIPE_ROUTES:Routes = [
+{path:'',children:[
 {path:'',pathMatch:'full',component:RecipesComponent},
 {path:':recipeId',component:RecipeDetailsComponent,resolve:{recipe:RecipeResolver}},
-];
+]}];
 
 const COMPONENTS = [
 RecipeDetailsComponent,RecipesComponent,RecipeListComponent,
@@ -38,6 +39,6 @@ export class RecipeModule {
 static forRoot():ModuleWithProviders{
 	return <ModuleWithProviders>{
 		ngModule:RecipeModule,
-		providers:[RecipeService]
+		providers:[RecipeService,RecipeResolver]
 	}
  } }

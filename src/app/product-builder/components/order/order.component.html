@@ -6,9 +6,9 @@
 
 	<!--ingredients -->
 	<div formArrayName="ingredients">
-		<div  class="single-ingredient" *ngFor="let ingredient of orderGroup.controls.ingredients.controls;let i=index;">
+		<div  class="single-ingredient" *ngFor="let ingredient of getControls();let i=index;">
 			<span>Ingredient {{i+1}}</span>
-				<app-order-ingredient (ingredientTotalChanged)="onIngredientTotalChanged($event,i)" [group]="orderGroup.controls.ingredients.controls[i]"></app-order-ingredient>
+				<app-order-ingredient (ingredientTotalChanged)="onIngredientTotalChanged($event,i)" [group]="getControls()[i]"></app-order-ingredient>
 
 		</div>
 	

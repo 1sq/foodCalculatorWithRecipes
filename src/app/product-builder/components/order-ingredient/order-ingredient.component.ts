@@ -8,7 +8,7 @@ import {FormGroup} from '@angular/forms';
 })
 export class OrderIngredientComponent {
 @Input('group') ingredientGroup:FormGroup;
-private _total = 0;
+ _total = 0;
 
 get total(){
 	let cost = this.ingredientGroup.get('cost').value/1000;

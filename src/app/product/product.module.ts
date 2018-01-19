@@ -4,11 +4,11 @@ import {RouterModule,Routes} from '@angular/router';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductSingleComponent } from './components/product-single/product-single.component';
 import { ProductComponent } from './components/product/product.component';
-import {ProductService} from './services/product.service';
 
 
 const PRODUCT_ROUTES:Routes = [
-{path:'',pathMatch:'full',component:ProductComponent}
+{path:'',children:[
+{path:'',component:ProductComponent}]}
 ];
 
 const COMPONENTS = [
@@ -19,13 +19,8 @@ ProductComponent,ProductListComponent,ProductSingleComponent
   imports: [
     CommonModule,RouterModule.forChild(PRODUCT_ROUTES)
   ],
+  
   declarations: [...COMPONENTS]
 })
 export class ProductModule {
-static forRoot():ModuleWithProviders{
-	return <ModuleWithProviders>{
-		ngModule:ProductModule,
-		providers:[ProductService]
-	}
- }
 }

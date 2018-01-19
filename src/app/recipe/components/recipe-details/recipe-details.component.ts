@@ -6,8 +6,8 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./recipe-details.component.scss']
 })
 export class RecipeDetailsComponent implements OnInit {
-private recipe;
-private steps;
+ recipe;
+ steps;
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit() {

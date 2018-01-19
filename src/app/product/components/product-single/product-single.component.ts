@@ -10,7 +10,7 @@ import {
 })
 export class ProductSingleComponent implements OnInit {
 @Input() product;
-private image;
+image;
 @ViewChild('overlay') overlay:ElementRef;
 
 

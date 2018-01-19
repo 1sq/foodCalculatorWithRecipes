@@ -8,7 +8,7 @@
           <i class="fa fa-plus"></i>
           Add product
         </button>
-	 <div *ngFor="let order of orderForm.controls.orders.controls; let i = index;">
+	 <div *ngFor="let order of getControls(); let i = index;">
 	 	<div class="order-creator__title blue lighten-5" [class.lighten-4]="openOrder === i" (click)="toggleOrder(i)">
 	 		Product {{i+1}}
 	 	
@@ -26,13 +26,13 @@
             </span>
             <div 
             class="order-creator__delete"
-            *ngIf="orderForm.get('orders').length > 0"
+            *ngIf="getControls().length > 0"
             (click)="removeOrder(i)">
             <i class="fa fa-trash fa-fw"></i>
           </div>
             </div>
 	 <div class="order-creator__body" [class.order-creator__body__opened]="openOrder===i" [formGroupName]="i">
-	 	<app-order (totalChanged)="onTotalChanged($event,i)" [group]="orderForm.controls.orders.controls[i]"></app-order>
+	 	<app-order (totalChanged)="onTotalChanged($event,i)" [group]="getControls()[i]"></app-order>
 	 </div>
 	 </div>
 	</div>

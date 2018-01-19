@@ -7,9 +7,9 @@ import {DomSanitizer,SafeStyle} from '@angular/platform-browser';
   styleUrls: ['./ingredient-list.component.scss']
 })
 export class IngredientListComponent implements OnInit {
-private _products = [];
-private image;
-private groupedProducts = {};
+_products = [];
+ image;
+ groupedProducts = {};
 
 @Output() chooseProduct:EventEmitter<any> = new EventEmitter<any>();
 

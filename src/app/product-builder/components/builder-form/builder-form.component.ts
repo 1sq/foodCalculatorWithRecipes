@@ -8,9 +8,9 @@ import {FormBuilder,FormArray,Validators,FormGroup} from '@angular/forms';
 })
 export class BuilderFormComponent implements OnInit {
 orderForm:FormGroup;
-private _visibleOrder:number = 0;
-private _totalCost=0;
-private arrayOfTotals = [];
+ _visibleOrder:number = 0;
+_totalCost=0;
+ arrayOfTotals = [];
 
 	get openOrder() {
 	    return this._visibleOrder;
@@ -96,4 +96,10 @@ sendOrderToApi(){
 	order['total'] = this._totalCost;
 	console.log(order);
 }
+
+
+ getControls(){
+ 	return this.orderForm.get('orders')['controls'];
+ }
+
 }

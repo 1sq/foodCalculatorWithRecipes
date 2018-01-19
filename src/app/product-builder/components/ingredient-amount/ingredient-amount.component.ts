@@ -17,15 +17,15 @@ export class IngredientAmountComponent implements ControlValueAccessor {
   @Input() units;
   value:number;
   focused: string;
-  private onTouch: Function;
-  private onModelChange: Function;
-  private _incrementOrDecrementStep:number =100;
-  private extraMeasurements=[
+   onTouch: Function;
+   onModelChange: Function;
+   _incrementOrDecrementStep:number =100;
+   extraMeasurements=[
   {name:'spoon',size:30,height:'110%',img:'/assets/img/spoon.png'},
   {name:'teaspoon',size:15,height:'100%',img:'/assets/img/teaspoon.png'},
   {name:'glass',size:200,height:'100%',img:'/assets/img/glass.png'}
   ];
-  private chosenMeasure = null;
+   chosenMeasure = null;
   get incrementOrDecrementStep(){
     if(this.units == 'unit'){
       this._incrementOrDecrementStep = 1;

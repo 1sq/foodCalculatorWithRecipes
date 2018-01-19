@@ -8,7 +8,7 @@ import {FormGroup,FormBuilder,FormArray,FormControl} from '@angular/forms';
 })
 export class OrderComponent implements OnInit{
 @Input('group') orderGroup:FormGroup;
-private _total:number = 0;
+ _total:number = 0;
 @Output() totalChanged = new EventEmitter();
 
 
@@ -26,6 +26,11 @@ ngOnInit(){
  		return total;
  	},0);
  	this.totalChanged.next(this._total);
+ }
+
+
+ getControls(){
+ 	return this.orderGroup.get('ingredients')['controls'];
  }
  
 }
