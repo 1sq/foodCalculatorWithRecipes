@@ -1,6 +1,7 @@
 # foodCalculatorWithRecipes
 calculator of the production cost for custom products
-  
+live demo here: https://dist-awdncthypb.now.sh/
+
 Menu view:
 ![menu](screen1menu.png)
 
